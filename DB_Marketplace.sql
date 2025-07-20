@@ -1,13 +1,13 @@
 use master
 go 
-create database MarketPlaceMedicos
+create database Medilink
 	ON PRIMARY
-		(name = MarketPlaceMedicos,
-		 filename = 'C:\BD\ MarketPlaceMedicos.mdf',
+		(name = Medilink,
+		 filename = 'C:\BD\ Medilink.mdf',
 		 size=20, maxsize=unlimited, filegrowth=10%)
 	LOG ON
-		(name = CMarketPlaceMedicos_LOG,
-		 filename = 'C:\BD\ MarketPlaceMedicos.idf',
+		(name = Medilink,
+		 filename = 'C:\BD\ Medilink.idf',
 		 size=50)
 go
 use MarketPlaceMedicos;
@@ -420,7 +420,7 @@ BEGIN
         WHERE IdExpediente = @IdExpediente;
     END
     ELSE IF @opc = 5
-    BEGIN -- Eliminación lógica
+    BEGIN -- EliminaciÃ³n lÃ³gica
         UPDATE Expediente SET EstadoExpediente = 0 WHERE IdExpediente = @IdExpediente;
     END
 END;
